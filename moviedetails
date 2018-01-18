@@ -1,0 +1,57 @@
+
+import java.util.*;
+
+public class movie {
+    int mid,mrate;
+String mname,mactor,mdir;
+int cr=0,ca=0,cd=0;
+
+void get(int mid,String mname, String mactor, String mdir, int mrate ){
+this.mid=mid;
+this.mname=mname;
+this.mactor=mactor;
+this.mdir=mdir;
+this.mrate=mrate;
+    
+       
+if(mrate>5)
+{ cr++;
+}
+
+if(mactor.equals("Amitabh Bachhan"))
+{
+    ca++;
+}
+
+if(mdir.equals("karan johar"))
+{
+    cd++;
+}
+}
+ public static void main(String[] args) {
+movie m=new movie();
+Scanner s= new Scanner(System.in);
+
+
+for(int i=1;i<2;i++)
+{
+System.out.println("Enter MovieID");
+int t=s.nextInt();
+System.out.println("Enter Movie Name");
+String u=s.next();
+System.out.println("Enter Movie Actor");
+String v=s.next();
+System.out.println("Enter Movie Director");
+String w=s.next();
+System.out.println("Enter Rating");
+int x=s.nextInt();
+m.get(t,u,v,w,x);
+ }
+
+System.out.println("Number of movies with rating greater than 5 =" +m.cr);
+System.out.println("Number of movies with actor as Amitabh Bachhan ="+ m.ca);
+System.out.println("Number of movie with director as karan Johar="+ m.cd);
+}
+}
+
+    
