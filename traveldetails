@@ -1,0 +1,84 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package travel;
+import java.util.*;
+
+public class travel {
+int cid,age;
+String cname,gender,city,country,hobby,phone;
+int countf=0,countm=0,countage=0,counth=0,countc=0,countp=0;
+
+void analysis(int cid, String cname, int age, String gender, String city, String country, String hobby, String phone)
+{
+this.cid=cid;
+this.cname=cname;
+this.age=age;
+this.gender=gender;
+this.city=city;
+this.country=country;
+this.hobby=hobby;
+this.phone=phone;
+
+if(gender.equals("M")|| gender.equals("m"))
+{
+countm++;
+}
+else
+{
+countf++;
+}
+if(age>60)
+{
+countage++;
+}
+if(hobby.equals("travel"))
+{
+counth++;
+}
+if(country.equals("india")||country.equals("India")||country.equals("USA")||country.equals("usa"))
+{
+    countc++;
+    }
+if(phone.equals("-")){
+countp++;
+}
+}
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+travel t1=new travel();
+Scanner s=new Scanner(System.in);
+for(int i=1;i<10;i++)
+{
+System.out.println("Enter CustomerID");
+int a=s.nextInt();
+System.out.println("Enter Customer Name");
+String b=s.next();
+System.out.println("Enter Age");
+int c=s.nextInt();
+System.out.println("Enter Gender");
+String d=s.next();
+System.out.println("Enter City");
+String e=s.next();
+System.out.println("Enter Country");
+String f=s.next();
+System.out.println("Enter Hobby");
+String g=s.next();
+System.out.println("Enter Phone number");      
+String h=s.next();
+t1.analysis(a,b,c,d,e,f,g,h);
+}
+System.out.println("count of male= "+t1.countm+"count of female= "+t1.countf);
+System.out.println("No. of senior citizens="+t1.countage);
+System.out.println("Customers with travelling hobbby= "+t1.counth);
+System.out.println("Customers belonging to USA/India = "+t1.countc);
+System.out.println("Customers with no phone numbers = "+ t1.countp);
+         
+}
+}
+    
+
