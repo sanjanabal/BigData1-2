@@ -1,0 +1,130 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package employee;
+
+/**
+ *
+ * @author Sanjana Bal
+ */
+import java.util.*;
+
+public class Employee {
+int empid,age,sal;
+String ename,city,country,dept,mstat,gender;
+int hsalfin=0,hsalmark=0,hsalhr=0,hsalop=0,cmale=0,cfemale=0;
+int cfin=0,cmark=0, chr=0,cop=0,cretire=0;
+
+void marriedmale()
+{
+    if(gender.equals("m")||gender.equals("M"))
+    {
+        if(mstat.equalsIgnoreCase("yes"))
+        {
+            cmale++;
+        }
+    }
+}
+void gethighsal()
+{
+    if(dept.equalsIgnoreCase("hr"))
+    {
+        chr++;
+        if(hsalhr<sal)
+        {
+            hsalhr=sal;
+        }
+        
+    }
+    else if(dept.equalsIgnoreCase("marketing"))
+    {
+        cmark++;
+        if(hsalmark<sal)
+        {
+            hsalmark=sal;
+        }
+        
+    }
+    else if(dept.equalsIgnoreCase("operations"))
+    {
+        cop++;
+        if(hsalop<sal)
+        {
+            hsalop=sal;
+        }
+        
+    }
+    else if(dept.equalsIgnoreCase("finance"))
+    {
+        cfin++;
+        if(hsalfin<sal)
+        {
+            hsalfin=sal;
+        }
+        
+    }
+}
+void retire(){
+if (age==59)
+{
+    cretire++;
+}
+}
+void indiafemale()
+{
+    if(gender.equalsIgnoreCase("f"))
+    {
+        if(country.equals("india"))
+        {
+            cfemale++;
+            
+        }
+    }
+}
+
+
+         public static void main(String[] args) {
+         Employee obj=new Employee();
+         Scanner in=new Scanner(System.in);
+         
+         for(int i=1;i<3;i++){
+
+System.out.println("Enter Employe Details: ID");
+obj.empid = in.nextInt();
+System.out.println("Enter Employe Details: name");
+obj.ename= in.next();
+System.out.println("Enter Employe Details: city");
+obj.city= in.next();
+System.out.println("Enter Employe Details: country");
+obj.country= in.next();
+System.out.println("Enter Employe Details: department");
+obj.dept= in.next();
+System.out.println("Enter Employe Details: age");
+obj.age= in.nextInt();
+System.out.println("Enter Employe Details:  maritalstatus(yes/no)");
+obj.mstat= in.next();
+System.out.println("Enter Employe Details: gender(f/m)");
+obj.gender= in.next();
+System.out.println("Enter Employe Details: salary");
+obj.sal= in.nextInt();
+
+obj.marriedmale();
+obj.gethighsal();
+obj.retire();
+obj.indiafemale();
+         }
+System.out.println("Count of Male employees who are married.." + obj.cmale);
+System.out.println("total count of employee in each dept\n" + "HR---"+obj.chr+"\nMarketing---"+obj.cmark+
+        "\nFinance---"+obj.cfin+"\noperation---"+obj.cop+
+"\n highest sal of each dept...\n" + "HR---"+obj.hsalhr+"\nMarketing---"+obj.hsalmark+
+        "\nFinance---"+obj.hsalfin+"\noperation---"+obj.hsalop +
+"\n count of emp going to retire after 1 yr(age >=60)" + obj.cretire + 
+"\n female emp belong to india" + obj.cfemale );
+      
+    
+      
+}
+}
+
