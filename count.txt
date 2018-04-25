@@ -1,0 +1,6 @@
+hadoop hadoop
+mahout
+mahout pig
+hadoop pig
+hbase hbase
+hbase hadoop
